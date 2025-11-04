@@ -171,7 +171,7 @@ $$\overleftarrow{\mathbf{h}}_t = \text{LSTM}(\mathbf{h}^{(2)}_t, \overleftarrow{
 $$\mathbf{h}_t^{\text{bi}} = [\overrightarrow{\mathbf{h}}_t; \overleftarrow{\mathbf{h}}_t]$$
 
 #### Detailed Architecture
-```python
+```
 Architecture Components:
 ├── 1D Conv Layer (input_size=70, filters=64, kernel=3, stride=1)
 │   ├── BatchNorm1d(64)
@@ -218,7 +218,7 @@ $$\mathbf{c}_{ij} = \rho(\mathbf{h}^{(i)}, \mathbf{h}^{(j)}) = \frac{\mathbf{h}^
 $$\mathbf{h}_{\text{fused}} = \text{Concat}([\mathbf{h}^{(1)}, \mathbf{h}^{(2)}, \mathbf{h}^{(3)}, \mathbf{h}^{(4)}, \mathbf{c}_{12}, \mathbf{c}_{13}, ..., \mathbf{c}_{34}])$$
 
 #### Detailed Architecture
-```python
+```
 Group Definitions:
 ├── Quaternion Group (G₁): [0:12]   - Orientation quaternions w,x,y,z
 ├── Quaternion Derivative Group (G₂): [12:24] - Rate of orientation change
@@ -287,7 +287,7 @@ where:
 $$\text{head}_i = \text{Attention}(\mathbf{Q}W_Q^i, \mathbf{K}W_K^i, \mathbf{V}W_V^i)$$
 
 #### Detailed Architecture
-```python
+```
 Input Processing:
 ├── Input: [batch_size, seq_len=20, input_size=70]
 ├── Linear Projection Layer: 70 → 128
@@ -370,7 +370,7 @@ $$\mathbf{x}_{\text{selected}} = \mathbf{g} \odot \mathbf{x}$$
 where $\odot$ denotes element-wise multiplication.
 
 #### Detailed Architecture
-```python
+```
 Feature Selection Gating Module:
 ├── Input: [batch_size, seq_len=20, features=70]
 ├── Global Average Pooling: [batch_size, seq_len, 70] → [batch_size, 70]
@@ -453,7 +453,7 @@ Single techniques often only solve specific problems, while nursing activity rec
 $$\mathbf{h}_{\text{hybrid}} = f_{\text{ta}}(f_{\text{ca}}(f_{\text{fs}}(\mathbf{X})))$$
 
 #### Detailed Architecture
-```python
+```
 HybridNet Complete Architecture:
 
 Stage 1: Adaptive Feature Selection
@@ -598,7 +598,7 @@ $$\rho(W_i, W_{i+1}) = \frac{\text{Cov}(W_i, W_{i+1})}{\sigma(W_i)\sigma(W_{i+1}
 ### Overfitting Prevention Strategy
 **Theoretical Basis**: Deep networks easily overfit on high-dimensional sparse data, requiring multi-level regularization.
 
-```python
+```
 Regularization Technique Combination:
 ├── Data Level:
 │   ├── Label Smoothing: y_soft = (1-ε)y_hard + ε/K
@@ -627,7 +627,7 @@ where $H(\cdot)$ is prediction entropy, encouraging moderate uncertainty.
 ### Training Configuration
 
 ### Data Processing Pipeline
-```python
+```
 Preprocessing Pipeline:
 ├── Subject-level data splitting (prevent data leakage)
 ├── Class balance check (min_samples=5000)
@@ -703,7 +703,7 @@ CONFIG = {
 
 ### Model Complexity Comparison
 **Parameter Count Analysis**:
-```python
+```
 Model Parameter Statistics:
 ├── Baseline CNN-LSTM:      ~2.1M parameters
 ├── Correlation-Aware CNN:  ~1.8M parameters (reduced by grouped convolution)
@@ -751,7 +751,7 @@ Let input dimension be $d=70$, sequence length $T=20$, hidden dimension $h=128$
 ```
 
 ### Performance Evaluation and Interpretation
-```python
+```
 Evaluation Metrics:
 ├── Accuracy
 ├── F1-Score 
@@ -794,29 +794,16 @@ Evaluation Metrics:
 
 ---
 
-## Citation
-
-If you use the code or methods from this project, please cite:
-
-```bibtex
-@misc{nursing_activity_recognition,
-  title={Deep Learning Models for Nursing Activity Recognition: A Comprehensive Analysis},
-  author={Your Name},
-  year={2024},
-  url={https://github.com/your-repo}
-}
-```
-
 ## License
 
 MIT License - See LICENSE file for details
 
 ## Contact
 
-For questions or suggestions, please contact: [your-email@example.com]
+For questions or suggestions, please contact: [xiaoyanli629@tsinghua.edu.cn]
 
 ---
 
 *This comprehensive documentation serves as a complete reference for the deep learning models and methodologies developed for nursing activity recognition, providing both theoretical foundations and practical implementation details for researchers and practitioners in the field.*
 
-**Last Updated**: June 27, 2024
+**Last Updated**: Nov 4, 2025
