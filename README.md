@@ -510,7 +510,8 @@ Define configurable module selector:
 $$\mathcal{M} = \{\alpha_{\text{fs}}, \alpha_{\text{ca}}, \alpha_{\text{ta}}\} \in \{0,1\}^3$$
 
 **Conditional Execution**:
-```math
+
+$$
 \begin{align}
 \mathbf{X}_1 &= \begin{cases}
 f_{\text{fs}}(\mathbf{X}) & \text{if } \alpha_{\text{fs}} = 1 \\
@@ -525,7 +526,7 @@ f_{\text{ta}}(\mathbf{X}_2) & \text{if } \alpha_{\text{ta}} = 1 \\
 \mathbf{X}_2 & \text{otherwise}
 \end{cases}
 \end{align}
-```
+$$
 
 **Joint Loss Function**:
 $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CE}} + \lambda_1 \mathcal{L}_{\text{fs}} + \lambda_2 \mathcal{L}_{\text{ca}} + \lambda_3 \mathcal{L}_{\text{ta}}$$
@@ -642,21 +643,19 @@ Preprocessing Pipeline:
 Systematically evaluate the contribution of each component in HybridNet to model performance, understanding the mechanism of different techniques.
 
 ### Ablation Configurations
-```python
-Testing Configuration Matrix:
-┌─────────────────────────────────────────────────────────┐
-│ Configuration Name      │ Feature Selection │ Correlation │ Temporal Attention │
-├─────────────────────────────────────────────────────────┤
-│ Baseline (No Components)│    ❌    │    ❌    │     ❌     │
-│ Feature Selection Only  │    ✅    │    ❌    │     ❌     │
-│ Correlation Aware Only  │    ❌    │    ✅    │     ❌     │
-│ Temporal Attention Only │    ❌    │    ❌    │     ✅     │
-│ Feature + Correlation   │    ✅    │    ✅    │     ❌     │
-│ Feature + Attention     │    ✅    │    ❌    │     ✅     │
-│ Correlation + Attention │    ❌    │    ✅    │     ✅     │
-│ Full HybridNet          │    ✅    │    ✅    │     ✅     │
-└─────────────────────────────────────────────────────────┘
-```
+
+**Testing Configuration Matrix:**
+
+| Configuration Name | Feature Selection | Correlation Aware | Temporal Attention |
+|-------------------|:-----------------:|:-----------------:|:------------------:|
+| Baseline (No Components) | ❌ | ❌ | ❌ |
+| Feature Selection Only | ✅ | ❌ | ❌ |
+| Correlation Aware Only | ❌ | ✅ | ❌ |
+| Temporal Attention Only | ❌ | ❌ | ✅ |
+| Feature + Correlation | ✅ | ✅ | ❌ |
+| Feature + Attention | ✅ | ❌ | ✅ |
+| Correlation + Attention | ❌ | ✅ | ✅ |
+| Full HybridNet | ✅ | ✅ | ✅ |
 
 ### Evaluation Metrics
 - **Performance Metrics**: Test accuracy, F1-score
