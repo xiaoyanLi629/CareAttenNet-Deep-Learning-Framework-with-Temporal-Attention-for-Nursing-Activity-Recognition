@@ -156,19 +156,44 @@ $$\mathbf{h}^{(1)}_t = \sigma(W_1 * \mathbf{x}_{t:t+k-1} + b_1)$$
 where $*$ denotes 1D convolution operation, $k$ is the kernel size, and $\sigma$ is the activation function.
 
 **LSTM Layer**:
-$$\begin{aligned}
-\mathbf{f}_t &= \sigma_g(W_f \mathbf{h}^{(2)}_t + U_f \mathbf{h}_{t-1} + b_f) \\
-\mathbf{i}_t &= \sigma_g(W_i \mathbf{h}^{(2)}_t + U_i \mathbf{h}_{t-1} + b_i) \\
-\mathbf{o}_t &= \sigma_g(W_o \mathbf{h}^{(2)}_t + U_o \mathbf{h}_{t-1} + b_o) \\
-\tilde{\mathbf{c}}_t &= \sigma_h(W_c \mathbf{h}^{(2)}_t + U_c \mathbf{h}_{t-1} + b_c) \\
-\mathbf{c}_t &= \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{c}}_t \\
-\mathbf{h}_t &= \mathbf{o}_t \odot \sigma_h(\mathbf{c}_t)
-\end{aligned}$$
+
+$$
+\mathbf{f}_t = \sigma_g(W_f \mathbf{h}^{(2)}_t + U_f \mathbf{h}_{t-1} + b_f)
+$$
+
+$$
+\mathbf{i}_t = \sigma_g(W_i \mathbf{h}^{(2)}_t + U_i \mathbf{h}_{t-1} + b_i)
+$$
+
+$$
+\mathbf{o}_t = \sigma_g(W_o \mathbf{h}^{(2)}_t + U_o \mathbf{h}_{t-1} + b_o)
+$$
+
+$$
+\tilde{\mathbf{c}}_t = \sigma_h(W_c \mathbf{h}^{(2)}_t + U_c \mathbf{h}_{t-1} + b_c)
+$$
+
+$$
+\mathbf{c}_t = \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{c}}_t
+$$
+
+$$
+\mathbf{h}_t = \mathbf{o}_t \odot \sigma_h(\mathbf{c}_t)
+$$
 
 **Bidirectional LSTM**:
-$$\overrightarrow{\mathbf{h}}_t = \text{LSTM}(\mathbf{h}^{(2)}_t, \overrightarrow{\mathbf{h}}_{t-1})$$
-$$\overleftarrow{\mathbf{h}}_t = \text{LSTM}(\mathbf{h}^{(2)}_t, \overleftarrow{\mathbf{h}}_{t+1})$$
-$$\mathbf{h}_t^{\text{bi}} = [\overrightarrow{\mathbf{h}}_t; \overleftarrow{\mathbf{h}}_t]$$
+
+$$
+\overrightarrow{\mathbf{h}}_t = \text{LSTM}(\mathbf{h}^{(2)}_t, \overrightarrow{\mathbf{h}}_{t-1})
+$$
+
+$$
+\overleftarrow{\mathbf{h}}_t = \text{LSTM}(\mathbf{h}^{(2)}_t, \overleftarrow{\mathbf{h}}_{t+1})
+$$
+
+$$
+\mathbf{h}_t^{\text{bi}} = [\overrightarrow{\mathbf{h}}_t; \overleftarrow{\mathbf{h}}_t]
+$$
 
 #### Detailed Architecture
 ```
@@ -207,12 +232,28 @@ Traditional CNNs treat all features as homogeneous, ignoring the physical struct
 **Feature Grouping Hypothesis**: Assume there exists feature grouping $\mathcal{G} = \{G_1, G_2, G_3, G_4\}$, where features within each group have stronger correlations, and learnable interaction patterns exist between groups.
 
 **Intra-group Correlation Modeling**:
-For the $k$-th feature group $\mathbf{x}^{(k)}_t \in \mathbb{R}^{d_k}$, apply specialized convolutional kernels:
-$$\mathbf{h}^{(k)}_t = \sigma(W^{(k)} * \mathbf{x}^{(k)}_{t:t+w-1} + b^{(k)})$$
+
+For the k-th feature group, apply specialized convolutional kernels:
+
+$$
+\mathbf{x}^{(k)}_t \in \mathbb{R}^{d_k}
+$$
+
+$$
+\mathbf{h}^{(k)}_t = \sigma(W^{(k)} * \mathbf{x}^{(k)}_{t:t+w-1} + b^{(k)})
+$$
 
 **Inter-group Correlation Learning**:
-Define correlation function $\rho: \mathbb{R}^{d_i} \times \mathbb{R}^{d_j} \rightarrow \mathbb{R}^{d_{ij}}$:
-$$\mathbf{c}_{ij} = \rho(\mathbf{h}^{(i)}, \mathbf{h}^{(j)}) = \frac{\mathbf{h}^{(i)} \odot \mathbf{h}^{(j)}}{\|\mathbf{h}^{(i)}\|_2 \|\mathbf{h}^{(j)}\|_2}$$
+
+Define correlation function:
+
+$$
+\rho: \mathbb{R}^{d_i} \times \mathbb{R}^{d_j} \rightarrow \mathbb{R}^{d_{ij}}
+$$
+
+$$
+\mathbf{c}_{ij} = \rho(\mathbf{h}^{(i)}, \mathbf{h}^{(j)}) = \frac{\mathbf{h}^{(i)} \odot \mathbf{h}^{(j)}}{\|\mathbf{h}^{(i)}\|_2 \|\mathbf{h}^{(j)}\|_2}
+$$
 
 **Feature Fusion**:
 $$\mathbf{h}_{\text{fused}} = \text{Concat}([\mathbf{h}^{(1)}, \mathbf{h}^{(2)}, \mathbf{h}^{(3)}, \mathbf{h}^{(4)}, \mathbf{c}_{12}, \mathbf{c}_{13}, ..., \mathbf{c}_{34}])$$
@@ -512,20 +553,24 @@ $$\mathcal{M} = \{\alpha_{\text{fs}}, \alpha_{\text{ca}}, \alpha_{\text{ta}}\} \
 **Conditional Execution**:
 
 $$
-\begin{align}
-\mathbf{X}_1 &= \begin{cases}
+\mathbf{X}_1 = \begin{cases}
 f_{\text{fs}}(\mathbf{X}) & \text{if } \alpha_{\text{fs}} = 1 \\
 \mathbf{X} & \text{otherwise}
-\end{cases} \\
-\mathbf{X}_2 &= \begin{cases}
+\end{cases}
+$$
+
+$$
+\mathbf{X}_2 = \begin{cases}
 f_{\text{ca}}(\mathbf{X}_1) & \text{if } \alpha_{\text{ca}} = 1 \\
 \mathbf{X}_1 & \text{otherwise}
-\end{cases} \\
-\mathbf{X}_3 &= \begin{cases}
+\end{cases}
+$$
+
+$$
+\mathbf{X}_3 = \begin{cases}
 f_{\text{ta}}(\mathbf{X}_2) & \text{if } \alpha_{\text{ta}} = 1 \\
 \mathbf{X}_2 & \text{otherwise}
 \end{cases}
-\end{align}
 $$
 
 **Joint Loss Function**:
