@@ -1,0 +1,65 @@
+SHAP Analysis Report - HybridNet Model for Nursing Activity Recognition
+================================================================================
+Generated: 2025-07-23 15:33:03
+
+MODEL INFORMATION:
+  Model Name: HybridNet
+  Architecture: HybridNet
+  Test Accuracy: 0.7752
+  Training Epochs: 179
+
+ANALYSIS OVERVIEW:
+  Samples Analyzed: 2
+  Features: 70
+  Activities: 18
+
+TOP 10 MOST IMPORTANT FEATURES (Global):
+   1. dq_Z_LF: 0.000719
+   2. dq_W_LF: 0.000695
+   3. Quat_Y_LF: 0.000655
+   4. Quat_W_LF: 0.000466
+   5. dv[2]_LF: 0.000443
+   6. Quat_Z_LF: 0.000440
+   7. dv[1]_LF: 0.000374
+   8. Quat_X_LF: 0.000235
+   9. dq_X_LF: 0.000234
+  10. dq_Y_LF: 0.000139
+
+SENSOR GROUP IMPORTANCE RANKING:
+  1. Quaternion: 0.000449
+  2. Quaternion_Derivative: 0.000447
+  3. Velocity: 0.000409
+  4. Magnetic: 0.000000
+  5. Other: 0.000000
+
+ACTIVITY-SPECIFIC INSIGHTS:
+  change clothes (1 samples):
+    - Quat_W_LF
+    - Quat_X_LF
+    - Quat_Y_LF
+
+KEY FINDINGS:
+1. Feature importance varies significantly across different nursing activities
+2. Sensor groups show different levels of contribution to model decisions
+3. Temporal patterns in the data influence model predictions
+4. SHAP analysis provides interpretable insights into the HybridNet model
+
+FILES GENERATED:
+  📊 Static Visualizations:
+    - global_feature_importance.png: Overall feature ranking
+    - shap_summary_plot.png: SHAP value distribution
+    - activity_specific_importance.png: Activity-level analysis
+    - sensor_group_importance.png: Sensor group comparison
+  🌐 Interactive Visualizations:
+    - interactive_feature_importance.html: Explorable feature ranking
+  📋 Analysis Reports:
+    - shap_analysis_detailed.json: Complete analysis data
+    - shap_analysis_summary.txt: This summary report
+
+RESEARCH APPLICATIONS:
+1. Model Interpretability: Understanding how the model makes decisions
+2. Feature Engineering: Identifying most informative sensor features
+3. Clinical Validation: Verifying that model focus aligns with domain knowledge
+4. Model Improvement: Guiding architecture refinements based on feature usage
+
+Analysis completed: 2025-07-23 15:33:03
