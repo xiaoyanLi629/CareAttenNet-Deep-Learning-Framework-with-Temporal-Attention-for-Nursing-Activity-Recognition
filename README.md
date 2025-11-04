@@ -256,7 +256,10 @@ $$
 $$
 
 **Feature Fusion**:
-$$\mathbf{h}_{\text{fused}} = \text{Concat}([\mathbf{h}^{(1)}, \mathbf{h}^{(2)}, \mathbf{h}^{(3)}, \mathbf{h}^{(4)}, \mathbf{c}_{12}, \mathbf{c}_{13}, ..., \mathbf{c}_{34}])$$
+
+$$
+\mathbf{h}_{\text{fused}} = \text{Concat}([\mathbf{h}^{(1)}, \mathbf{h}^{(2)}, \mathbf{h}^{(3)}, \mathbf{h}^{(4)}, \mathbf{c}_{12}, \mathbf{c}_{13}, ..., \mathbf{c}_{34}])
+$$
 
 #### Detailed Architecture
 ```
@@ -364,14 +367,26 @@ Global Pooling and Classification:
 #### Mathematical Derivation
 
 **Meaning of Attention Weights**:
-Attention weight $\alpha_{ij}$ represents the degree of attention position $i$ pays to position $j$:
-$$\alpha_{ij} = \frac{\exp(\text{score}(\mathbf{h}_i, \mathbf{h}_j))}{\sum_{k=1}^T \exp(\text{score}(\mathbf{h}_i, \mathbf{h}_k))}$$
+
+Attention weight represents the degree of attention position i pays to position j:
+
+$$
+\alpha_{ij} = \frac{\exp(\text{score}(\mathbf{h}_i, \mathbf{h}_j))}{\sum_{k=1}^T \exp(\text{score}(\mathbf{h}_i, \mathbf{h}_k))}
+$$
 
 **Theoretical Basis for Scaling Factor**:
-When $d_k$ is large, dot product values can be very large, pushing the softmax function into saturated regions. The scaling factor $\frac{1}{\sqrt{d_k}}$ ensures gradient stability:
-$$\text{Var}(\mathbf{q} \cdot \mathbf{k}) = d_k \cdot \text{Var}(q_i) \cdot \text{Var}(k_i) = d_k$$
 
-After scaling: $\text{Var}\left(\frac{\mathbf{q} \cdot \mathbf{k}}{\sqrt{d_k}}\right) = 1$
+When d_k is large, dot product values can be very large, pushing the softmax function into saturated regions. The scaling factor ensures gradient stability:
+
+$$
+\text{Var}(\mathbf{q} \cdot \mathbf{k}) = d_k \cdot \text{Var}(q_i) \cdot \text{Var}(k_i) = d_k
+$$
+
+After scaling:
+
+$$
+\text{Var}\left(\frac{\mathbf{q} \cdot \mathbf{k}}{\sqrt{d_k}}\right) = 1
+$$
 
 **Theoretical Advantages of Multi-head Attention**:
 Different attention heads can focus on different relationship patterns:
@@ -398,17 +413,24 @@ For $T=20, d=128$: self-attention dominates
 Among 70-dimensional sensor features, not all features are equally important for every activity. This architecture dynamically identifies and emphasizes feature subsets most relevant to the current sample through a learnable feature selection gating mechanism.
 
 #### Theoretical Foundation
-**Feature Importance Hypothesis**: For different nursing activities, feature importance varies significantly. Define feature importance vector $\mathbf{g} \in [0,1]^d$, where $g_i$ represents the importance weight of the $i$-th feature.
+
+**Feature Importance Hypothesis**: For different nursing activities, feature importance varies significantly. Define feature importance vector g ∈ [0,1]^d, where g_i represents the importance weight of the i-th feature.
 
 **Mathematical Definition of Gating Mechanism**:
-$$\mathbf{g} = \sigma(\mathbf{W}_g \mathbf{x} + \mathbf{b}_g)$$
 
-where $\sigma$ is the Sigmoid function, ensuring gating weights are in the $[0,1]$ range.
+$$
+\mathbf{g} = \sigma(\mathbf{W}_g \mathbf{x} + \mathbf{b}_g)
+$$
+
+where σ is the Sigmoid function, ensuring gating weights are in the [0,1] range.
 
 **Feature Selection Operation**:
-$$\mathbf{x}_{\text{selected}} = \mathbf{g} \odot \mathbf{x}$$
 
-where $\odot$ denotes element-wise multiplication.
+$$
+\mathbf{x}_{\text{selected}} = \mathbf{g} \odot \mathbf{x}
+$$
+
+where ⊙ denotes element-wise multiplication.
 
 #### Detailed Architecture
 ```
@@ -445,33 +467,60 @@ $$\frac{\partial \sigma(x)}{\partial x} = \sigma(x)(1 - \sigma(x))$$
 When $\sigma(x) \to 0$ or $\sigma(x) \to 1$, the gradient approaches 0, achieving a "hard" selection effect.
 
 **Information-Theoretic Interpretation of Feature Selection**:
-Define information entropy after selection:
-$$H(\mathbf{x}_{\text{selected}}) = -\sum_{i=1}^d p(x_i) \log p(x_i)$$
 
-where $p(x_i) = \frac{g_i |x_i|}{\sum_{j=1}^d g_j |x_j|}$
+Define information entropy after selection:
+
+$$
+H(\mathbf{x}_{\text{selected}}) = -\sum_{i=1}^d p(x_i) \log p(x_i)
+$$
+
+where
+
+$$
+p(x_i) = \frac{g_i |x_i|}{\sum_{j=1}^d g_j |x_j|}
+$$
 
 The goal is to maximize information entropy of relevant features while minimizing contribution of irrelevant features.
 
 **Regularization of Gating Weights**:
+
 To prevent over-sparsification, introduce L1 regularization term:
-$$\mathcal{L}_{\text{reg}} = \lambda \sum_{i=1}^d |g_i|$$
+
+$$
+\mathcal{L}_{\text{reg}} = \lambda \sum_{i=1}^d |g_i|
+$$
 
 Total loss function:
-$$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CE}} + \mathcal{L}_{\text{reg}}$$
+
+$$
+\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CE}} + \mathcal{L}_{\text{reg}}
+$$
 
 #### Theoretical Advantages of Gating Mechanism
 
 **1. Adaptability**:
+
 Different samples activate different feature subsets:
-$$\mathbf{g}^{(n)} = f_{\text{gate}}(\mathbf{x}^{(n)})$$
+
+$$
+\mathbf{g}^{(n)} = f_{\text{gate}}(\mathbf{x}^{(n)})
+$$
 
 **2. Interpretability**:
+
 Gating weights directly reflect feature importance, facilitating analysis:
-$$\text{Importance}(f_i) = \mathbb{E}[g_i]$$
+
+$$
+\text{Importance}(f_i) = \mathbb{E}[g_i]
+$$
 
 **3. Computational Efficiency**:
+
 Feature selection reduces subsequent computation:
-$$\text{Complexity}_{\text{reduced}} = \text{Complexity}_{\text{original}} \times \mathbb{E}[\|\mathbf{g}\|_1/d]$$
+
+$$
+\text{Complexity}_{\text{reduced}} = \text{Complexity}_{\text{original}} \times \mathbb{E}[\|\mathbf{g}\|_1/d]
+$$
 
 #### Key Innovations
 1. **Dynamic Feature Selection**: Adaptively adjusts feature weights based on input samples
@@ -491,7 +540,10 @@ Single techniques often only solve specific problems, while nursing activity rec
 - $f_{\text{ta}}: \mathbb{R}^{T \times d'} \rightarrow \mathbb{R}^{d''}$ (temporal attention)
 
 **Ensemble Mapping**:
-$$\mathbf{h}_{\text{hybrid}} = f_{\text{ta}}(f_{\text{ca}}(f_{\text{fs}}(\mathbf{X})))$$
+
+$$
+\mathbf{h}_{\text{hybrid}} = f_{\text{ta}}(f_{\text{ca}}(f_{\text{fs}}(\mathbf{X})))
+$$
 
 #### Detailed Architecture
 ```
@@ -574,27 +626,42 @@ f_{\text{ta}}(\mathbf{X}_2) & \text{if } \alpha_{\text{ta}} = 1 \\
 $$
 
 **Joint Loss Function**:
-$$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CE}} + \lambda_1 \mathcal{L}_{\text{fs}} + \lambda_2 \mathcal{L}_{\text{ca}} + \lambda_3 \mathcal{L}_{\text{ta}}$$
+
+$$
+\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CE}} + \lambda_1 \mathcal{L}_{\text{fs}} + \lambda_2 \mathcal{L}_{\text{ca}} + \lambda_3 \mathcal{L}_{\text{ta}}
+$$
 
 where:
-- $\mathcal{L}_{\text{CE}}$: Cross-entropy loss
-- $\mathcal{L}_{\text{fs}} = \|\mathbf{g}\|_1$: Feature selection sparsity loss
-- $\mathcal{L}_{\text{ca}} = \sum_{i,j} \|\mathbf{c}_{ij}\|_2^2$: Correlation regularization
-- $\mathcal{L}_{\text{ta}} = \|\mathbf{A}\|_F^2$: Attention weight regularization
+- L_CE: Cross-entropy loss
+- L_fs = ||g||₁: Feature selection sparsity loss
+- L_ca = Σ ||c_ij||₂²: Correlation regularization
+- L_ta = ||A||_F²: Attention weight regularization
 
 #### Inter-module Interaction Analysis
 
 **1. Feature Selection → Correlation Awareness**:
+
 Feature selection reduces noise, improving accuracy of correlation computation:
-$$\text{SNR}_{\text{improved}} = \frac{\text{Signal}_{\text{selected}}}{\text{Noise}_{\text{filtered}}}$$
+
+$$
+\text{SNR}_{\text{improved}} = \frac{\text{Signal}_{\text{selected}}}{\text{Noise}_{\text{filtered}}}
+$$
 
 **2. Correlation Awareness → Temporal Attention**:
+
 Structured features provide better foundation for temporal modeling:
-$$\text{Attention}_{\text{quality}} \propto \text{Feature}_{\text{structure}}$$
+
+$$
+\text{Attention}_{\text{quality}} \propto \text{Feature}_{\text{structure}}
+$$
 
 **3. End-to-End Optimization**:
+
 Gradients backpropagate through all modules:
-$$\frac{\partial \mathcal{L}}{\partial \theta_{\text{fs}}} = \frac{\partial \mathcal{L}}{\partial \mathbf{X}_3} \cdot \frac{\partial \mathbf{X}_3}{\partial \mathbf{X}_2} \cdot \frac{\partial \mathbf{X}_2}{\partial \mathbf{X}_1} \cdot \frac{\partial \mathbf{X}_1}{\partial \theta_{\text{fs}}}$$
+
+$$
+\frac{\partial \mathcal{L}}{\partial \theta_{\text{fs}}} = \frac{\partial \mathcal{L}}{\partial \mathbf{X}_3} \cdot \frac{\partial \mathbf{X}_3}{\partial \mathbf{X}_2} \cdot \frac{\partial \mathbf{X}_2}{\partial \mathbf{X}_1} \cdot \frac{\partial \mathbf{X}_1}{\partial \theta_{\text{fs}}}
+$$
 
 #### Theoretical Advantages Analysis
 
@@ -604,12 +671,20 @@ $$\frac{\partial \mathcal{L}}{\partial \theta_{\text{fs}}} = \frac{\partial \mat
 - Temporal attention: Captures important temporal patterns
 
 **2. Robustness**:
+
 Modular design provides fault tolerance:
-$$P(\text{System Failure}) = \prod_{i=1}^3 P(\text{Module}_i \text{ Failure})$$
+
+$$
+P(\text{System Failure}) = \prod_{i=1}^3 P(\text{Module}_i \text{ Failure})
+$$
 
 **3. Extensibility**:
+
 New modules can be seamlessly integrated:
-$$f_{\text{new}} = f_{\text{module}_n} \circ f_{\text{module}_{n-1}} \circ ... \circ f_{\text{module}_1}$$
+
+$$
+f_{\text{new}} = f_{\text{module}_n} \circ f_{\text{module}_{n-1}} \circ ... \circ f_{\text{module}_1}
+$$
 
 #### Key Innovations
 1. **Unified Integration Framework**: Organic combination of three complementary techniques
