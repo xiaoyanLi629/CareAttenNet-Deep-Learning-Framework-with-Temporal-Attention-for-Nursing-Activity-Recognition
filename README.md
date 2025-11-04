@@ -699,19 +699,31 @@ $$
 **Theoretical Foundation**: Traditional random splitting causes same subject's data to be distributed across training, validation, and test sets, leading to temporal dependency leakage.
 
 **Subject-level Splitting**:
-$$\mathcal{S} = \{S_1, S_2, ..., S_{13}\} \rightarrow \{\mathcal{S}_{\text{train}}, \mathcal{S}_{\text{val}}, \mathcal{S}_{\text{test}}\}$$
+
+$$
+\mathcal{S} = \{S_1, S_2, ..., S_{13}\} \rightarrow \{\mathcal{S}_{\text{train}}, \mathcal{S}_{\text{val}}, \mathcal{S}_{\text{test}}\}
+$$
 
 **Mathematical Verification**:
-Let $\mathcal{D}_{\text{train}} \cap \mathcal{D}_{\text{test}} = \emptyset$ at subject level, then:
-$$P(\text{data leakage}) = P(\exists i,j : \text{subject}(x_i^{\text{train}}) = \text{subject}(x_j^{\text{test}})) = 0$$
+
+At subject level, the training and test sets are disjoint:
+
+$$
+P(\text{data leakage}) = P(\exists i,j : \text{subject}(x_i^{\text{train}}) = \text{subject}(x_j^{\text{test}})) = 0
+$$
 
 ### Temporal Dependency Elimination
+
 **Problem Formalization**:
+
 Correlation between adjacent windows in time series:
-$$\rho(W_i, W_{i+1}) = \frac{\text{Cov}(W_i, W_{i+1})}{\sigma(W_i)\sigma(W_{i+1})}$$
+
+$$
+\rho(W_i, W_{i+1}) = \frac{\text{Cov}(W_i, W_{i+1})}{\sigma(W_i)\sigma(W_{i+1})}
+$$
 
 **Solution**:
-1. **Non-overlapping Windows**: Step size $s = 2W$, ensuring $W_i \cap W_j = \emptyset$ for $|i-j| \geq 1$
+1. **Non-overlapping Windows**: Step size s = 2W, ensuring windows are disjoint for |i-j| ≥ 1
 2. **Temporal Order Shuffling**: Random permutation of training windows breaks temporal patterns
 3. **Intra-window Consistency**: Only retain windows with completely identical labels
 
@@ -739,10 +751,14 @@ Regularization Technique Combination:
 ```
 
 **Mathematical Modeling**:
-Total regularization loss:
-$$\mathcal{L}_{\text{reg}} = \lambda_1\|\theta\|_2^2 + \lambda_2\|\theta\|_1 + \lambda_3 H(\text{predictions})$$
 
-where $H(\cdot)$ is prediction entropy, encouraging moderate uncertainty.
+Total regularization loss:
+
+$$
+\mathcal{L}_{\text{reg}} = \lambda_1\|\theta\|_2^2 + \lambda_2\|\theta\|_1 + \lambda_3 H(\text{predictions})
+$$
+
+where H(·) is prediction entropy, encouraging moderate uncertainty.
 
 ### Training Configuration
 
