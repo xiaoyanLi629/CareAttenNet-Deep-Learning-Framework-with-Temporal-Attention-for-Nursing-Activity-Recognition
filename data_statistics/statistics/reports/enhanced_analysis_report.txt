@@ -1,0 +1,42 @@
+SONaR Nursing Activity Dataset - Enhanced Analysis Report
+============================================================
+Analysis Time: 2025-07-24 23:47:57
+
+DATASET OVERVIEW:
+  Total Files: 253
+  Processed Files: 46
+  Total Samples: 1,227,822
+  Total Features: 70
+  Total Subjects: 11
+
+SUBJECT ANALYSIS:
+  Number of Subjects: 11
+  Avg Samples per Subject: 111620.2 ± 77128.9
+  Avg Activities per Subject: 10.4 ± 4.1
+
+ACTIVITY ANALYSIS:
+  Total Activity Types: 19
+  Most Frequent Activity: change clothes
+  Activities with ≥1000 samples: 17
+  Activities with ≥500 samples: 18
+
+FEATURE ANALYSIS:
+  Total Features: 70
+  Numeric Features: 70
+  High Correlations Found: 6
+  Strong Correlations (|r|>0.5): 17
+  Max Feature Correlation: 0.967
+
+DATA QUALITY:
+  Data Completeness: 99.90%
+  Duplicate Rows: 793
+  Missing Value Rate: 0.10%
+
+KEY INSIGHTS:
+  1. Dataset contains 19 nursing activities from 11 subjects
+  2. 17 activities have sufficient samples (≥1000) for reliable training
+  3. Data quality is high with 99.9% completeness
+  4. 6 feature pairs show high correlation (>0.8)
+  5. 17 sensor feature pairs show strong correlation (>0.5)
+  6. Feature correlation heatmap reveals sensor relationships and potential redundancies
+  7. Average subject contributes 111620 samples across 10.4 activities

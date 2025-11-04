@@ -1,0 +1,333 @@
+{
+  "files_analyzed": 120,
+  "sampling_statistics": {
+    "mean_sampling_rate_hz": 0.0,
+    "std_sampling_rate_hz": 0.0,
+    "min_sampling_rate_hz": 0.0,
+    "max_sampling_rate_hz": 0.0,
+    "median_sampling_rate_hz": 0.0,
+    "sampling_rate_consistency": 0
+  },
+  "activity_durations": {
+    "kitchen preparation": {
+      "count": 91,
+      "mean_duration_ms": 62947595.92307692,
+      "std_duration_ms": 84248289.7666112,
+      "min_duration_ms": 4983433.0,
+      "max_duration_ms": 424925165.0,
+      "median_duration_ms": 29733928.0,
+      "total_duration_ms": 5728231229.0
+    },
+    "deliver food": {
+      "count": 198,
+      "mean_duration_ms": 18172333.136363637,
+      "std_duration_ms": 16720587.44167801,
+      "min_duration_ms": 3566738.0,
+      "max_duration_ms": 109118849.0,
+      "median_duration_ms": 12700254.0,
+      "total_duration_ms": 3598121961.0
+    },
+    "serve food": {
+      "count": 131,
+      "mean_duration_ms": 57881055.816793896,
+      "std_duration_ms": 83057885.08705136,
+      "min_duration_ms": 2816723.0,
+      "max_duration_ms": 578611572.0,
+      "median_duration_ms": 28617239.0,
+      "total_duration_ms": 7582418312.0
+    },
+    "prepare bath": {
+      "count": 59,
+      "mean_duration_ms": 34639958.3220339,
+      "std_duration_ms": 20194818.370931182,
+      "min_duration_ms": 8016827.0,
+      "max_duration_ms": 92085175.0,
+      "median_duration_ms": 28233898.0,
+      "total_duration_ms": 2043757541.0
+    },
+    "push wheelchair": {
+      "count": 187,
+      "mean_duration_ms": 16941604.422459893,
+      "std_duration_ms": 12744847.87825035,
+      "min_duration_ms": 1866704.0,
+      "max_duration_ms": 67484683.0,
+      "median_duration_ms": 12200244.0,
+      "total_duration_ms": 3168080027.0
+    },
+    "collect dishes": {
+      "count": 102,
+      "mean_duration_ms": 19948764.980392158,
+      "std_duration_ms": 17281322.90612661,
+      "min_duration_ms": 3333400.0,
+      "max_duration_ms": 119819063.0,
+      "median_duration_ms": 14841963.5,
+      "total_duration_ms": 2034774028.0
+    },
+    "wash at sink": {
+      "count": 64,
+      "mean_duration_ms": 62909070.65625,
+      "std_duration_ms": 60790675.136875585,
+      "min_duration_ms": 1500030.0,
+      "max_duration_ms": 341706834.0,
+      "median_duration_ms": 41209157.5,
+      "total_duration_ms": 4026180522.0
+    },
+    "dental care": {
+      "count": 15,
+      "mean_duration_ms": 86455062.4,
+      "std_duration_ms": 54128678.785953715,
+      "min_duration_ms": 13666940.0,
+      "max_duration_ms": 180853617.0,
+      "median_duration_ms": 67101342.0,
+      "total_duration_ms": 1296825936.0
+    },
+    "change clothes": {
+      "count": 238,
+      "mean_duration_ms": 51284008.85294118,
+      "std_duration_ms": 50716113.36744772,
+      "min_duration_ms": 3016727.0,
+      "max_duration_ms": 354690427.0,
+      "median_duration_ms": 36275725.5,
+      "total_duration_ms": 12205594107.0
+    },
+    "comb hair": {
+      "count": 26,
+      "mean_duration_ms": 19499748.96153846,
+      "std_duration_ms": 15498520.834746199,
+      "min_duration_ms": 3033394.0,
+      "max_duration_ms": 58251165.0,
+      "median_duration_ms": 13333600.0,
+      "total_duration_ms": 506993473.0
+    },
+    "make bed": {
+      "count": 105,
+      "mean_duration_ms": 43579284.266666666,
+      "std_duration_ms": 40165462.593866415,
+      "min_duration_ms": 4016747.0,
+      "max_duration_ms": 236388061.0,
+      "median_duration_ms": 32333980.0,
+      "total_duration_ms": 4575824848.0
+    },
+    "pour drinks": {
+      "count": 62,
+      "mean_duration_ms": 17724816.85483871,
+      "std_duration_ms": 16509425.295964189,
+      "min_duration_ms": 3250065.0,
+      "max_duration_ms": 96385261.0,
+      "median_duration_ms": 13183597.0,
+      "total_duration_ms": 1098938645.0
+    },
+    "put food on plate": {
+      "count": 108,
+      "mean_duration_ms": 24033814.0,
+      "std_duration_ms": 23109680.522991344,
+      "min_duration_ms": 1516697.0,
+      "max_duration_ms": 113018927.0,
+      "median_duration_ms": 16141989.5,
+      "total_duration_ms": 2595651912.0
+    },
+    "wheelchair transfer": {
+      "count": 73,
+      "mean_duration_ms": 18101275.260273974,
+      "std_duration_ms": 16623328.188405536,
+      "min_duration_ms": 2700054.0,
+      "max_duration_ms": 68384701.0,
+      "median_duration_ms": 10850217.0,
+      "total_duration_ms": 1321393094.0
+    },
+    "clean up": {
+      "count": 127,
+      "mean_duration_ms": 30802847.01574803,
+      "std_duration_ms": 44954946.550689615,
+      "min_duration_ms": 3266732.0,
+      "max_duration_ms": 418591705.0,
+      "median_duration_ms": 18717041.0,
+      "total_duration_ms": 3911961571.0
+    },
+    "wash in bed": {
+      "count": 99,
+      "mean_duration_ms": 68954577.71717171,
+      "std_duration_ms": 56176069.569989085,
+      "min_duration_ms": 6383461.0,
+      "max_duration_ms": 296172590.0,
+      "median_duration_ms": 51767702.0,
+      "total_duration_ms": 6826503194.0
+    },
+    "documentation": {
+      "count": 28,
+      "mean_duration_ms": 29679760.25,
+      "std_duration_ms": 16353729.840630446,
+      "min_duration_ms": 7866824.0,
+      "max_duration_ms": 71601432.0,
+      "median_duration_ms": 27192210.5,
+      "total_duration_ms": 831033287.0
+    },
+    "wipe up": {
+      "count": 10,
+      "mean_duration_ms": 37677420.2,
+      "std_duration_ms": 56647395.52629807,
+      "min_duration_ms": 4433422.0,
+      "max_duration_ms": 204987433.0,
+      "median_duration_ms": 19292052.5,
+      "total_duration_ms": 376774202.0
+    },
+    "wash hair": {
+      "count": 6,
+      "mean_duration_ms": 17642019.5,
+      "std_duration_ms": 6682107.3859175285,
+      "min_duration_ms": 8433502.0,
+      "max_duration_ms": 27650553.0,
+      "median_duration_ms": 17175343.5,
+      "total_duration_ms": 105852117.0
+    },
+    "put accessories": {
+      "count": 18,
+      "mean_duration_ms": 13648421.111111112,
+      "std_duration_ms": 11635965.366636004,
+      "min_duration_ms": 3816743.0,
+      "max_duration_ms": 41867504.0,
+      "median_duration_ms": 8558504.5,
+      "total_duration_ms": 245671580.0
+    },
+    "blow-dry": {
+      "count": 1,
+      "mean_duration_ms": 317273012.0,
+      "std_duration_ms": 0.0,
+      "min_duration_ms": 317273012.0,
+      "max_duration_ms": 317273012.0,
+      "median_duration_ms": 317273012.0,
+      "total_duration_ms": 317273012.0
+    },
+    "put medication": {
+      "count": 4,
+      "mean_duration_ms": 34338186.75,
+      "std_duration_ms": 27259675.59742935,
+      "min_duration_ms": 12483583.0,
+      "max_duration_ms": 80601612.0,
+      "median_duration_ms": 22133776.0,
+      "total_duration_ms": 137352747.0
+    }
+  },
+  "temporal_patterns": {
+    "total_activity_instances": 1752,
+    "mean_activity_duration_ms": 36835164.0097032,
+    "std_activity_duration_ms": 48769476.78230545,
+    "short_activities_count": 0,
+    "medium_activities_count": 0,
+    "long_activities_count": 1752
+  },
+  "subjects_temporal_stats": {
+    "10": {
+      "files_count": 30,
+      "total_samples": 1580651,
+      "total_duration_ms": NaN,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "6": {
+      "files_count": 11,
+      "total_samples": 647156,
+      "total_duration_ms": NaN,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "4": {
+      "files_count": 8,
+      "total_samples": 613802,
+      "total_duration_ms": NaN,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "1": {
+      "files_count": 28,
+      "total_samples": 830282,
+      "total_duration_ms": NaN,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "12": {
+      "files_count": 3,
+      "total_samples": 348916,
+      "total_duration_ms": NaN,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "2": {
+      "files_count": 8,
+      "total_samples": 858915,
+      "total_duration_ms": NaN,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "3": {
+      "files_count": 5,
+      "total_samples": 189433,
+      "total_duration_ms": NaN,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "13": {
+      "files_count": 6,
+      "total_samples": 513637,
+      "total_duration_ms": NaN,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "11": {
+      "files_count": 6,
+      "total_samples": 233662,
+      "total_duration_ms": 4017030339.0,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "14": {
+      "files_count": 2,
+      "total_samples": 146686,
+      "total_duration_ms": NaN,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "8": {
+      "files_count": 3,
+      "total_samples": 331935,
+      "total_duration_ms": 6172640117.0,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "9": {
+      "files_count": 4,
+      "total_samples": 212500,
+      "total_duration_ms": 3837293411.0,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    },
+    "5": {
+      "files_count": 1,
+      "total_samples": 31860,
+      "total_duration_ms": 559277852.0,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0,
+      "sampling_consistency": 1.0
+    },
+    "7": {
+      "files_count": 5,
+      "total_samples": 254881,
+      "total_duration_ms": 4252568383.0,
+      "avg_sampling_rate_hz": 0.0,
+      "std_sampling_rate_hz": 0.0,
+      "sampling_consistency": 1.0
+    }
+  }
+}

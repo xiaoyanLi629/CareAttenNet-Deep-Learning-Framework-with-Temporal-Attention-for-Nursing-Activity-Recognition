@@ -1,0 +1,114 @@
+{
+  "total_feature_pairs": 4830,
+  "strong_correlations_count": 17,
+  "max_correlation": 0.9673691386246036,
+  "mean_abs_correlation": 0.05537646921657366,
+  "std_correlation": 0.10570173157201329,
+  "correlations_above_05": 34,
+  "correlations_above_07": 14,
+  "correlations_above_09": 10,
+  "top_20_correlations": [
+    {
+      "feature_1": "Quat_W_LF",
+      "feature_2": "Quat_Y_LF",
+      "correlation": -0.9673691386246036,
+      "abs_correlation": 0.9673691386246036
+    },
+    {
+      "feature_1": "Quat_X_LF",
+      "feature_2": "Quat_Z_LF",
+      "correlation": 0.9647597542397437,
+      "abs_correlation": 0.9647597542397437
+    },
+    {
+      "feature_1": "Quat_X_RF",
+      "feature_2": "Quat_Z_RF",
+      "correlation": 0.9544491078100791,
+      "abs_correlation": 0.9544491078100791
+    },
+    {
+      "feature_1": "Quat_W_RF",
+      "feature_2": "Quat_Y_RF",
+      "correlation": -0.9537890246819731,
+      "abs_correlation": 0.9537890246819731
+    },
+    {
+      "feature_1": "Quat_X_ST",
+      "feature_2": "Quat_Z_ST",
+      "correlation": 0.9033460949468554,
+      "abs_correlation": 0.9033460949468554
+    },
+    {
+      "feature_1": "Quat_W_ST",
+      "feature_2": "Quat_Y_ST",
+      "correlation": -0.8910539967115284,
+      "abs_correlation": 0.8910539967115284
+    },
+    {
+      "feature_1": "dv[2]_RW",
+      "feature_2": "Mag_Y_RW",
+      "correlation": -0.7073610869885933,
+      "abs_correlation": 0.7073610869885933
+    },
+    {
+      "feature_1": "dv[1]_LW",
+      "feature_2": "Mag_X_LW",
+      "correlation": -0.6980784812468259,
+      "abs_correlation": 0.6980784812468259
+    },
+    {
+      "feature_1": "dv[2]_LW",
+      "feature_2": "Mag_Y_LW",
+      "correlation": -0.6955545033850736,
+      "abs_correlation": 0.6955545033850736
+    },
+    {
+      "feature_1": "dv[3]_RW",
+      "feature_2": "Mag_Z_RW",
+      "correlation": -0.6235477190433796,
+      "abs_correlation": 0.6235477190433796
+    },
+    {
+      "feature_1": "dv[1]_LW",
+      "feature_2": "dv[1]_RW",
+      "correlation": 0.5309323890537743,
+      "abs_correlation": 0.5309323890537743
+    },
+    {
+      "feature_1": "dq_X_ST",
+      "feature_2": "dq_Z_ST",
+      "correlation": 0.5234686019151926,
+      "abs_correlation": 0.5234686019151926
+    },
+    {
+      "feature_1": "dv[3]_LW",
+      "feature_2": "Mag_Z_LW",
+      "correlation": -0.520355297115442,
+      "abs_correlation": 0.520355297115442
+    },
+    {
+      "feature_1": "Quat_Y_RW",
+      "feature_2": "Quat_Z_RW",
+      "correlation": 0.5156938121832536,
+      "abs_correlation": 0.5156938121832536
+    },
+    {
+      "feature_1": "Mag_Z_ST",
+      "feature_2": "Mag_X_RF",
+      "correlation": 0.5090461450523004,
+      "abs_correlation": 0.5090461450523004
+    },
+    {
+      "feature_1": "Quat_W_LW",
+      "feature_2": "Quat_X_LW",
+      "correlation": -0.5050697691705671,
+      "abs_correlation": 0.5050697691705671
+    },
+    {
+      "feature_1": "Quat_X_ST",
+      "feature_2": "Quat_Y_RW",
+      "correlation": -0.5006096799612006,
+      "abs_correlation": 0.5006096799612006
+    }
+  ]
+}

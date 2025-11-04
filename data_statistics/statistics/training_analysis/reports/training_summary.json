@@ -1,0 +1,74 @@
+{
+  "Baseline (No Components)": {
+    "best_val_acc": 0.3385,
+    "best_val_epoch": 161,
+    "final_train_acc": 0.6952,
+    "overfitting_gap": 0.3567,
+    "val_stability": 0.007357266815876666,
+    "convergence_epoch": 81,
+    "total_epochs": 39
+  },
+  "Feature Selection Only": {
+    "best_val_acc": 0.3473,
+    "best_val_epoch": 200,
+    "final_train_acc": 0.7364,
+    "overfitting_gap": 0.38910000000000006,
+    "val_stability": 0.004324620648103139,
+    "convergence_epoch": 11,
+    "total_epochs": 39
+  },
+  "Correlation Aware Only": {
+    "best_val_acc": 0.3492,
+    "best_val_epoch": 191,
+    "final_train_acc": 0.668,
+    "overfitting_gap": 0.31880000000000003,
+    "val_stability": 0.005486973209338639,
+    "convergence_epoch": 4,
+    "total_epochs": 39
+  },
+  "Temporal Attention Only": {
+    "best_val_acc": 0.3941,
+    "best_val_epoch": 200,
+    "final_train_acc": 0.8644,
+    "overfitting_gap": 0.47029999999999994,
+    "val_stability": 0.006955651928467964,
+    "convergence_epoch": 81,
+    "total_epochs": 39
+  },
+  "Feature Selection + Correlation": {
+    "best_val_acc": 0.3298,
+    "best_val_epoch": 181,
+    "final_train_acc": 0.7145,
+    "overfitting_gap": 0.38470000000000004,
+    "val_stability": 0.004030818775385459,
+    "convergence_epoch": 8,
+    "total_epochs": 39
+  },
+  "Feature Selection + Attention": {
+    "best_val_acc": 0.3672,
+    "best_val_epoch": 200,
+    "final_train_acc": 0.8596,
+    "overfitting_gap": 0.4924,
+    "val_stability": 0.0031573079909948646,
+    "convergence_epoch": 21,
+    "total_epochs": 39
+  },
+  "Correlation + Attention": {
+    "best_val_acc": 0.7749,
+    "best_val_epoch": 181,
+    "final_train_acc": 0.8441,
+    "overfitting_gap": 0.06919999999999993,
+    "val_stability": 0.003131692832957945,
+    "convergence_epoch": 41,
+    "total_epochs": 39
+  },
+  "Full HybridNet (All Components)": {
+    "best_val_acc": 0.7731,
+    "best_val_epoch": 181,
+    "final_train_acc": 0.8465,
+    "overfitting_gap": 0.07340000000000002,
+    "val_stability": 0.00516851949304635,
+    "convergence_epoch": 31,
+    "total_epochs": 39
+  }
+}

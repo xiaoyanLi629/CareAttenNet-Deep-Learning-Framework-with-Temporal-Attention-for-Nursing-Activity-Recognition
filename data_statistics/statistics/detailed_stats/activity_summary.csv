@@ -1,0 +1,20 @@
+activity,total_samples,subjects_count,avg_samples_per_subject
+change clothes,259286,9,28809.555555555555
+clean up,165120,8,20640.0
+make bed,137428,9,15269.777777777777
+wash in bed,125335,9,13926.111111111111
+serve food,116737,6,19456.166666666668
+wash at sink,76847,7,10978.142857142857
+push wheelchair,62910,10,6291.0
+deliver food,62166,9,6907.333333333333
+put food on plate,40574,5,8114.8
+kitchen preparation,39547,5,7909.4
+dental care,29820,2,14910.0
+prepare bath,24487,9,2720.777777777778
+wheelchair transfer,21126,6,3521.0
+collect dishes,20555,3,6851.666666666667
+documentation,20003,5,4000.6
+pour drinks,19281,4,4820.25
+comb hair,5528,6,921.3333333333334
+put medication,813,1,813.0
+put accessories,259,1,259.0

@@ -1,0 +1,96 @@
+{
+  "analysis_timestamp": "2025-07-24 20:35:25",
+  "subject_id": "12",
+  "activities": [
+    "change clothes",
+    "wash in bed"
+  ],
+  "data_shape": [
+    1000,
+    70
+  ],
+  "mean_difference_top10": [
+    {
+      "feature_index": 68,
+      "feature_name": "Mag_Y_RF",
+      "activity1_mean": -0.7280205078125,
+      "activity2_mean": 0.141617431640625,
+      "absolute_difference": 0.8696379394531251
+    },
+    {
+      "feature_index": 44,
+      "feature_name": "Quat_Y_RW",
+      "activity1_mean": -0.3846567068100001,
+      "activity2_mean": 0.4779545404850001,
+      "absolute_difference": 0.8626112472950002
+    },
+    {
+      "feature_index": 13,
+      "feature_name": "Mag_Z_LF",
+      "activity1_mean": -0.41437255859375,
+      "activity2_mean": 0.300274169921875,
+      "absolute_difference": 0.714646728515625
+    },
+    {
+      "feature_index": 31,
+      "feature_name": "Quat_Z_ST",
+      "activity1_mean": 0.208634803391,
+      "activity2_mean": -0.50001878368,
+      "absolute_difference": 0.708653587071
+    },
+    {
+      "feature_index": 25,
+      "feature_name": "Mag_X_LW",
+      "activity1_mean": -0.294046875,
+      "activity2_mean": 0.411739501953125,
+      "absolute_difference": 0.705786376953125
+    },
+    {
+      "feature_index": 1,
+      "feature_name": "Quat_X_LF",
+      "activity1_mean": -0.58877557095,
+      "activity2_mean": 0.053702184441000014,
+      "absolute_difference": 0.642477755391
+    },
+    {
+      "feature_index": 3,
+      "feature_name": "Quat_Z_LF",
+      "activity1_mean": -0.50149742009,
+      "activity2_mean": 0.1383639702765,
+      "absolute_difference": 0.6398613903665
+    },
+    {
+      "feature_index": 14,
+      "feature_name": "Quat_W_LW",
+      "activity1_mean": 0.5524437205,
+      "activity2_mean": 0.010880088282549992,
+      "absolute_difference": 0.5415636322174501
+    },
+    {
+      "feature_index": 53,
+      "feature_name": "Mag_X_RW",
+      "activity1_mean": -0.2773330078125,
+      "activity2_mean": 0.24763037109375,
+      "absolute_difference": 0.52496337890625
+    },
+    {
+      "feature_index": 55,
+      "feature_name": "Mag_Z_RW",
+      "activity1_mean": -0.1646474609375,
+      "activity2_mean": 0.3380361328125,
+      "absolute_difference": 0.50268359375
+    }
+  ],
+  "overall_statistics": {
+    "activity1": {
+      "mean_signal_strength": 0.019920889614600475,
+      "signal_variability": 0.08032642084869779,
+      "signal_range": 0.36356040073082685
+    },
+    "activity2": {
+      "mean_signal_strength": 0.07136134697030293,
+      "signal_variability": 0.09415967934814923,
+      "signal_range": 0.37343163460543166
+    }
+  }
+}

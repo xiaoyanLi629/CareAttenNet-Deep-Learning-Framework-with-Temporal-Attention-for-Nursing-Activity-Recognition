@@ -1,0 +1,32 @@
+SONaR Dataset - Temporal Analysis Report
+==================================================
+Analysis Time: 2025-08-09 13:27:04
+
+ANALYSIS OVERVIEW:
+  Files Analyzed: 120
+  Subjects: 14
+  Activities Analyzed: 22
+
+SAMPLING STATISTICS:
+  Mean Sampling Rate: 0.0 ± 0.0 Hz
+  Sampling Rate Range: 0.0 - 0.0 Hz
+  Sampling Consistency: 0.00%
+
+TEMPORAL PATTERNS:
+  Total Activity Instances: 1752
+  Average Activity Duration: 36835164 ± 48769477 ms
+  Short Activities (<5s): 0
+  Medium Activities (5-30s): 0
+  Long Activities (>30s): 1752
+
+TOP 5 ACTIVITIES BY DURATION:
+  1. blow-dry: 317273012 ms
+  2. dental care: 86455062 ms
+  3. wash in bed: 68954578 ms
+  4. kitchen preparation: 62947596 ms
+  5. wash at sink: 62909071 ms
+
+SUBJECT STATISTICS:
+  Total Recording Time: nan hours
+  Average Sampling Consistency: 100.00%
+  Subjects with High Consistency (>90%): 14

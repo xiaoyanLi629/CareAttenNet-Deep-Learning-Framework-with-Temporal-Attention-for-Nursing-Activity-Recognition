@@ -1,0 +1,28 @@
+{
+  "analysis_date": "2025-06-18T23:49:59.090357",
+  "total_samples": 6640986,
+  "total_activities": 22,
+  "analyzed_activities": 22,
+  "min_activity_count": 100,
+  "window_size": 30,
+  "styles_generated": [
+    "professional"
+  ],
+  "top_activities": {
+    "change clothes": 1328819,
+    "serve food": 712554,
+    "wash in bed": 635232,
+    "kitchen preparation": 563398,
+    "clean up": 500426,
+    "make bed": 468078,
+    "wash at sink": 384421,
+    "push wheelchair": 346463,
+    "deliver food": 323111,
+    "put food on plate": 286588
+  },
+  "matrix_stats": {
+    "max_correlation": 5278.0,
+    "mean_correlation": 245.900826446281,
+    "non_zero_connections": 294
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-07-02T19:13:37.397350",
+  "dataset_info": {
+    "total_samples": 49990,
+    "n_features": 70,
+    "n_activities": 20,
+    "n_subjects": 14,
+    "class_imbalance_ratio": 62.37359022556391
+  },
+  "activities": {
+    "selected_activities": [
+      "change clothes",
+      "serve food",
+      "wash in bed",
+      "kitchen preparation",
+      "clean up",
+      "make bed",
+      "wash at sink",
+      "push wheelchair",
+      "deliver food",
+      "put food on plate",
+      "prepare bath",
+      "collect dishes",
+      "put medication",
+      "wheelchair transfer",
+      "pour drinks",
+      "dental care",
+      "documentation",
+      "comb hair",
+      "wipe up",
+      "put accessories"
+    ],
+    "activity_counts": {
+      "change clothes": 1327310,
+      "serve food": 710986,
+      "wash in bed": 635232,
+      "kitchen preparation": 563398,
+      "clean up": 499764,
+      "make bed": 468078,
+      "wash at sink": 384421,
+      "push wheelchair": 345201,
+      "deliver food": 322229,
+      "put food on plate": 286588,
+      "prepare bath": 205748,
+      "collect dishes": 199459,
+      "put medication": 142627,
+      "wheelchair transfer": 138465,
+      "pour drinks": 95628,
+      "dental care": 93883,
+      "documentation": 86007,
+      "comb hair": 44481,
+      "wipe up": 34474,
+      "put accessories": 21280
+    },
+    "most_frequent": "change clothes",
+    "least_frequent": "put accessories"
+  },
+  "umap_config": {
+    "n_neighbors": 15,
+    "min_dist": 0.1,
+    "n_components": 2,
+    "metric": "euclidean"
+  },
+  "validation": {
+    "matches_training_data": true,
+    "preprocessing_identical": true,
+    "subject_based_loading": true
+  }
+}
